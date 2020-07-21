@@ -10,6 +10,8 @@ This plugin depends on uncss. See [uncss](https://github.com/giakki/uncss) for i
 
 ## Configure
 
+The plugin is executed in jekyll environment `JEKYLL_ENV=production`, only. Therefore jekyll must be invoked like `JEKYLL_ENV=production jekyll [...]`.
+
 Configure uncss by adding a `uncss` node to your _config.yml. The `stylesheets` option is mandatory, all others are optional. By default all html files (`**/*.html`) are considered. Use the `files` option to change this.
 
 For most option there's a corresponding [uncss option](https://github.com/giakki/uncss) and the configuration is just passed through (maybe with some path adjustments). A noticable exception is the `stylesheets` option: Instead of passing all css files to uncss at once (which would result in the stylesheets being merged), the css files are passed one by one. So each file given is processed separately.
