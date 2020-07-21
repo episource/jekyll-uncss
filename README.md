@@ -28,7 +28,11 @@ For most option there's a corresponding [uncss option](https://github.com/giakki
         - "#titleBar"
       media:                  # additional media queries to consider; default: undefined
         - print
-      timeout: 30             # how long to wait for the JS to be loaded; default: undefined
+      timeout: 30             # how long to wait for the JS to be loaded in milliseconds; default: undefined
       banner: false           # should the output include a banner comment; default: undefined
 
 Note: The `ignore` option can also be included as a css comment. See [uncss](https://github.com/giakki/uncss) documentation for details.
+
+## FAQ
+### `Error: Could not load script` in output files using uncss 0.17.*
+Set configuration option `timeout` or increase its value: [uncss-0.17.0 started to evaluate scripts](https://github.com/uncss/uncss/blob/0.17.0/src/jsdom.js#L42). Without timeout or with timeout to short, loading of scripts may fail. The timeout option is given in milliseconds.
